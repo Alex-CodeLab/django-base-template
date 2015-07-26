@@ -30,7 +30,7 @@ SUPPORTED_NONLOCALES = ['media', 'admin', 'static']
 LANGUAGE_CODE = 'en-us'
 
 # Defines the views served for root URLs.
-ROOT_URLCONF = '{{ project_name }}.urls'
+ROOT_URLCONF = 'mainapp.urls'
 
 # Application definition
 INSTALLED_APPS = (
@@ -145,21 +145,6 @@ MIDDLEWARE_CLASSES = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
-TEMPLATE_CONTEXT_PROCESSORS = [
-    'django.contrib.auth.context_processors.auth',
-    'django.core.context_processors.debug',
-    'django.core.context_processors.media',
-    'django.core.context_processors.request',
-    'django.core.context_processors.i18n',
-    'django.core.context_processors.static',
-    'django.core.context_processors.csrf',
-    'django.core.context_processors.tz',
-    'django.contrib.messages.context_processors.messages',
-    
-    # `allauth` specific context processors
-    'allauth.account.context_processors.account',
-    'allauth.socialaccount.context_processors.socialaccount',
-]
 
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -171,31 +156,49 @@ AUTHENTICATION_BACKENDS = (
 )
 
 
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or
-    # "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    os.path.join(PROJECT_ROOT, 'base/templates'),
-)
-
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 )
 
-TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [    
+               # insert your TEMPLATE_DIRS here
+               os.path.join(PROJECT_ROOT, 'base/templates'),
+               os.path.join(PROJECT_ROOT, 'base/templates/allauth'),
+        ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                # Insert your TEMPLATE_CONTEXT_PROCESSORS here or use this
+                # list if you haven't customized them:
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
+
+
+TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 def custom_show_toolbar(request):
     """ Only show the debug toolbar to users with the superuser flag. """
     return request.user.is_superuser
 
-
 DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
-    'SHOW_TOOLBAR_CALLBACK': '{{ project_name }}.settings.base.custom_show_toolbar',
+    'SHOW_TOOLBAR_CALLBACK': 'mainapp.settings.base.custom_show_toolbar',
     'HIDE_DJANGO_SQL': True,
     'TAG': 'body',
     'SHOW_TEMPLATE_CONTEXT': True,
@@ -228,7 +231,7 @@ DEBUG_TOOLBAR_CONFIG = {
 FILE_UPLOAD_PERMISSIONS = 0o0664
 
 # The WSGI Application to use for runserver
-WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
+WSGI_APPLICATION = 'mainapp.wsgi.application'
 
 # Define your database connections
 DATABASES = {
@@ -300,26 +303,26 @@ INTERNAL_IPS = ('127.0.0.1')
 
 SERVER_EMAIL = "webmaster@example.com"
 DEFAULT_FROM_EMAIL = "webmaster@example.com"
-SYSTEM_EMAIL_PREFIX = "[{{ project_name }}]"
+SYSTEM_EMAIL_PREFIX = "[mainapp]"
 
 ## Log settings
 
 LOG_LEVEL = logging.INFO
 HAS_SYSLOG = True
-SYSLOG_TAG = "http_app_{{ project_name }}"  # Make this unique to your project.
+SYSLOG_TAG = "http_app_mainapp"  # Make this unique to your project.
 # Remove this configuration variable to use your custom logging configuration
 LOGGING_CONFIG = None
 LOGGING = {
     'version': 1,
     'loggers': {
-        '{{ project_name }}': {
+        'mainapp': {
             'level': "DEBUG"
         }
     }
 }
 
 # Common Event Format logging parameters
-#CEF_PRODUCT = '{{ project_name }}'
+#CEF_PRODUCT = 'mainapp'
 #CEF_VENDOR = 'Your Company'
 #CEF_VERSION = '0'
 #CEF_DEVICE_VERSION = '0'
