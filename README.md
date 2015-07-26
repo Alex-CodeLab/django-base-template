@@ -9,6 +9,28 @@ layouts/project templates. It aims to be simple, yet complete.
 
 This version of the project template includes new options for Django 1.8
 
+## Installation ##
+
+- Create your working environment and virtualenv:
+   - $ virtualenv project
+   - $ cd project
+   - $ source bin/activate
+- Make sure you have libffi installed ($ sudo apt-get install libffi-dev)
+- $ pip install "Django>=1.8"
+- $ bin/django-admin.py startproject --template https://github.com/allox/django-base-template-1.8/zipball/master --extension py,md,rst mainapp
+- $ mv mainapp/ src
+- $ cd src
+- Uncomment your preferred database adapter in requirements/compiled.txt (MySQL, Postgresql, or skip this step to stick with SQLite)
+- $ pip install -r requirements/local.txt
+- $ cp mainapp/settings/local-dist.py mainapp/settings/local.py
+- $ chmod +x manage.py
+- $ ./manage.py syncdb
+- $ ./manage.py migrate
+- $ ./manage.py collectstatic
+- $ ./manage.py runserver
+
+
+
 
 
 ## Features ##
@@ -46,36 +68,6 @@ Testing:
 
 Any of these options can added, modified, or removed as you like after creating your project.
 
-## Installation ##
-## How to use this project template to create your project ##
-
-- Create your working environment and virtualenv:
-   - $ virtualenv project
-   - $ cd project
-   - $ source bin/activate
-- Make sure you have libffi installed ($ sudo apt-get install libffi-dev)
-- $ pip install "Django>=1.8"
-- $ bin/django-admin.py startproject --template https://github.com/allox/django-base-template-1.8/zipball/master --extension py,md,rst mainapp
-- $ mv mainapp/ src
-- $ cd src
-- Uncomment your preferred database adapter in requirements/compiled.txt (MySQL, Postgresql, or skip this step to stick with SQLite)
-- $ pip install -r requirements/local.txt
-- $ cp mainapp/settings/local-dist.py mainapp/settings/local.py
-- $ chmod +x manage.py
-- $ ./manage.py syncdb
-- $ ./manage.py migrate
-- $ ./manage.py collectstatic
-- $ ./manage.py runserver
-
-
-
-
-That's all you need to do to get the project ready for development. When you deploy your project into production, you should look into getting certain settings from environment variables or other external sources. (See SECRET_KEY for an example.)
-
-There isn't a need to add settings/local.py to your source control, but there are multiple schools of thought on this. The method I use here is an example where each developer has their own settings/local.py with machine-specific settings. You will also need to create a version of settings/local.py for use in production that you will put into place with your deployment system (Fabric, chef, puppet, etc).
-
-The second school of thought is that all settings should be versioned, so that as much of the code/settings as possible is the same across all developers and test/production servers. If you prefer this method, then make sure *all* necessary settings are properly set in settings/base.py, and then edit settings/__init__.py so it no longer reraises the exception. (ie, by replacing 'raise' with 'pass'). As it is, settings/local.py should only be overriding settings from settings/base.py anyway. (You could also just set the DJANGO_SETTINGS_MODULE environment variable to "mainapp.settings.base" directly.)
-
 ## Python 3 compatability ##
 
 All the code provided in the template itself is compatable with Python 3. Unfortunately, there are still a number of libraries that do not work under Python 3. If you want to use this template under Python 3, you will need to either remove those libraries or find replacements for them.
@@ -96,7 +88,6 @@ The libraries I am aware of that do not support Python 3:
 
 License
 -------
-This software is licensed under the [New BSD License][BSD]. For more
-information, read the file ``LICENSE``.
+This software is licensed under the [New BSD License][BSD]. 
 
 [BSD]: http://opensource.org/licenses/BSD-3-Clause
