@@ -44,6 +44,9 @@ Templating:
 
 - django_compressor for compressing javascript/css/less/sass
 
+Authentication, registration
+- allauth (+ base-template) 
+
 Security:
 
 - bleach
