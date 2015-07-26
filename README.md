@@ -54,7 +54,7 @@ Any of these options can added, modified, or removed as you like after creating 
    - $ cd project
    - $ source bin/activate
 - Make sure you have libffi installed ($ sudo apt-get install libffi-dev)
-- $ pip install Django==1.8
+- $ pip install "Django>=1.8"
 - $ bin/django-admin.py startproject --template https://github.com/allox/django-base-template-1.8/zipball/master --extension py,md,rst mainapp
 - $ mv mainapp/ src
 - $ cd src
