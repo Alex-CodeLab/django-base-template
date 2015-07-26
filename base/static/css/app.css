@@ -1,0 +1,120 @@
+/* =============================================================================
+   App specific CSS file.
+
+   This is usually where the site/app's CSS specific rules are setup. Note that you could
+   do exactly the same using less by adding a '@import "app.less";' at the end of
+   css/less/bootstrap.less file.
+
+   ========================================================================== */
+
+
+body {
+   background: url("") repeat scroll 0 0 rgba(1, 1, 11, 0.01);
+   font-size: 13px;
+   line-height: 1.32;
+   font-family: small-caption,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+
+.jumbotron {
+    color: white;
+}
+
+.maincontent{
+    padding-top: 20px;
+
+}
+
+dt {
+    font-weight: normal;
+}
+
+a {
+    color: #363f44;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+     color: #262e44;
+
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.navbar-default {
+background-image: none;
+}
+
+ul.nav li a {
+    display: block;
+    font-weight: normal;
+    padding: 0px 23px 0px 24px;
+    position: relative;
+    text-transform: none;
+    transition: background-color 0.2s ease-in-out 0s;
+}
+.navbar-nav > li > a {
+    line-height: 23px;
+}
+
+ul.nav > li >a:hover, .nav > li > a:focus{
+    background-color: #f6f8f8;
+}
+
+.nav-stacked > li + li {
+    line-height: 30px;
+    margin-left: 0;
+
+}
+
+.navbar-nav {
+    padding-top: 12px;
+
+}
+
+.button {
+    border-radius: 12px;
+    display: block;
+    font-size: 13px;
+    font-weight: bold !important ;
+    height: 24px;
+    line-height: 24px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+
+}
+.button.skeleton {
+    box-shadow: 0 0 0 1px rgba(55, 55, 55, 0.25) inset;
+    color: #777 !important;
+}
+
+#gradient {
+    background: radial-gradient(circle at right bottom , #13b1f8 0px, #1a81a3 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+.btn-default {
+    background-image: linear-gradient(to bottom, #fff 0px, #aaa 100%);
+    background-repeat: repeat-x;
+    border-color: #aaa;
+    text-shadow: 0 1px 0 #fff;
+}
+
+.btn-default:hover{
+    background-image: linear-gradient(to bottom, #eee 0px, #ccc 100%);
+    background-color: #ccc ;
+    border-color: #bbb;
+}
+
+.jumbotron .btn-default{
+    border-color: #666;
+}

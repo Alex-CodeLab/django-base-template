@@ -1,0 +1,21 @@
+{% extends "allauth/base.html" %}
+
+{% block body %}
+{% block content %}
+
+{% if user %}
+    <h1>Welcome, {{user.first_name}}</h1>
+    <p>Following is the Extra information provided to allauth:</p>
+    {% for account in user.socialaccount_set.all %}
+        <h2 style="text-transform:capitalize;">{{ account.provider }} account data</h2>
+        <p><img width="50" height="50" src="{{ account.get_avatar_url }}" /></p>
+        <p>UID: <a href="{{account.extra_data.link }}">{{ account.uid }}</a></p>
+        <p>Username: {{ account.extra_data.username }}</p>
+        <p>First Name: {{ account.extra_data.first_name }}</p>
+        <p>Last Name: {{ account.extra_data.last_name }}</p>
+        <p>Profile Link: <a href="{{ account.extra_data.link }}">{{ account.extra_data.link }}</a></p>
+    {% endfor %}
+{% endif %}
+
+{% endblock content %}
+{% endblock body %}

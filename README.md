@@ -1,0 +1,101 @@
+
+# Django 1.8 Base Template using Bootstrap3 CSS#
+
+## About ##
+
+This 'best practice' template is based off of the work of [Mozilla Playdoh][playdoh] and
+[Two Scoops of Django][twoscoops], as well as experience with other Django
+layouts/project templates. It aims to be simple, yet complete.
+
+This version of the project template includes new options for Django 1.8
+
+
+
+## Features ##
+
+By default, this project template includes:
+
+A set of basic templates and Twitter Bootstrap 3.2.0 (located in the
+base app, with css and javascript included).
+
+Templating:
+
+- django_compressor for compressing javascript/css/less/sass
+
+Security:
+
+- bleach
+- bcrypt - uses bcrypt for password hashing by default
+
+Background Tasks:
+
+- Celery
+
+Caching:
+
+- python-memcached
+
+Admin:
+
+- Includes django-debug-toolbar for development and production (enabled for superusers)
+
+Testing:
+
+- nose and django-nose
+- pylint, pep8, and coverage
+
+Any of these options can added, modified, or removed as you like after creating your project.
+
+## Installation ##
+## How to use this project template to create your project ##
+
+- Create your working environment and virtualenv:
+   - $ virtualenv project
+   - $ cd project
+   - $ source bin/activate
+- Make sure you have libffi installed ($ sudo apt-get install libffi-dev)
+- $ pip install Django==1.8
+- $ bin/django-admin.py startproject --template https://github.com/allox/django-base-template-1.8/zipball/master --extension py,md,rst mainapp
+- $ cd mainapp
+- Uncomment your preferred database adapter in requirements/compiled.txt (MySQL, Postgresql, or skip this step to stick with SQLite)
+- $ pip install -r requirements/local.txt
+- $ cp mainapp/settings/local-dist.py mainapp/settings/local.py
+- $ chmod +x manage.py
+- optional: rename /mainapp/ to /src/ to avoid repeating folder names and create a nicer folder structure:
+  $ mv mainapp/ src
+- $ ./manage.py syncdb
+- $ ./manage.py migrate
+- $ ./manage.py collectstatic
+- $ ./manage.py runserver
+
+
+That's all you need to do to get the project ready for development. When you deploy your project into production, you should look into getting certain settings from environment variables or other external sources. (See SECRET_KEY for an example.)
+
+There isn't a need to add settings/local.py to your source control, but there are multiple schools of thought on this. The method I use here is an example where each developer has their own settings/local.py with machine-specific settings. You will also need to create a version of settings/local.py for use in production that you will put into place with your deployment system (Fabric, chef, puppet, etc).
+
+The second school of thought is that all settings should be versioned, so that as much of the code/settings as possible is the same across all developers and test/production servers. If you prefer this method, then make sure *all* necessary settings are properly set in settings/base.py, and then edit settings/__init__.py so it no longer reraises the exception. (ie, by replacing 'raise' with 'pass'). As it is, settings/local.py should only be overriding settings from settings/base.py anyway. (You could also just set the DJANGO_SETTINGS_MODULE environment variable to "mainapp.settings.base" directly.)
+
+## Python 3 compatability ##
+
+All the code provided in the template itself is compatable with Python 3. Unfortunately, there are still a number of libraries that do not work under Python 3. If you want to use this template under Python 3, you will need to either remove those libraries or find replacements for them.
+
+The libraries I am aware of that do not support Python 3:
+
+* python-memcached (use python3-memcached)
+
+
+
+## Prerequisites ##
+
+- Python 2.6 or 2.7
+- pip
+- virtualenv (virtualenvwrapper is recommended for use during development)
+
+
+
+License
+-------
+This software is licensed under the [New BSD License][BSD]. For more
+information, read the file ``LICENSE``.
+
+[BSD]: http://opensource.org/licenses/BSD-3-Clause
