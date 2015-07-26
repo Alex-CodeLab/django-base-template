@@ -15,7 +15,7 @@ This version of the project template includes new options for Django 1.8
 
 By default, this project template includes:
 
-A set of basic templates and Twitter Bootstrap 3.2.0 (located in the
+A set of basic templates and Twitter Bootstrap 3.3.5 (located in the
 base app, with css and javascript included).
 
 Templating:
@@ -56,17 +56,18 @@ Any of these options can added, modified, or removed as you like after creating 
 - Make sure you have libffi installed ($ sudo apt-get install libffi-dev)
 - $ pip install Django==1.8
 - $ bin/django-admin.py startproject --template https://github.com/allox/django-base-template-1.8/zipball/master --extension py,md,rst mainapp
-- $ cd mainapp
+- $ mv mainapp/ src
+- $ cd src
 - Uncomment your preferred database adapter in requirements/compiled.txt (MySQL, Postgresql, or skip this step to stick with SQLite)
 - $ pip install -r requirements/local.txt
 - $ cp mainapp/settings/local-dist.py mainapp/settings/local.py
 - $ chmod +x manage.py
-- optional: rename /mainapp/ to /src/ to avoid repeating folder names and create a nicer folder structure:
-  $ mv mainapp/ src
 - $ ./manage.py syncdb
 - $ ./manage.py migrate
 - $ ./manage.py collectstatic
 - $ ./manage.py runserver
+
+
 
 
 That's all you need to do to get the project ready for development. When you deploy your project into production, you should look into getting certain settings from environment variables or other external sources. (See SECRET_KEY for an example.)
