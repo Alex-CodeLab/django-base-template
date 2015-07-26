@@ -3,9 +3,9 @@
 
 ## About ##
 
-This 'best practice' template is based off of the work of [Mozilla Playdoh][playdoh] and
-[Two Scoops of Django][twoscoops], as well as experience with other Django
-layouts/project templates. It aims to be simple, yet complete.
+This 'best practice' template is based off of the work of Mozilla Playdoh, 
+Two Scoops of Django and [django-base-template](https://github.com/xenith/django-base-template). 
+It aims to be simple, yet complete.
 
 This version of the project template includes new options for Django 1.8
 
