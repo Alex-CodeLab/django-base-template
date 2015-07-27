@@ -1,5 +1,5 @@
 
-# Django 1.8 Base Template using Bootstrap3 CSS#
+# Django 1.8 Project Template - Bootstrap3, Allauth#
 
 ## About ##
 
