@@ -18,10 +18,14 @@ This version of the project template includes new options for Django 1.8
    - $ sudo apt-get install libevent-dev python3-dev
 - Create your working environment and virtualenv:
    - $ virtualenv project
+
+   python3:
+   - $ virtualenv -p python3 project
+
    - $ cd project
    - $ source bin/activate
 
-- Now either run  install.sh or run the following manualy: 
+- Now either run  install.sh or run the following manually: 
 
 - $ pip install "Django>=1.8"
 - $ bin/django-admin.py startproject --template https://github.com/allox/django-base-template-1.8/zipball/master --extension py,md,rst mainapp
@@ -80,17 +84,14 @@ Any of these options can added, modified, or removed as you like after creating 
 
 ## Python 3 compatability ##
 
-All the code provided in the template itself is compatable with Python 3. Unfortunately, there are still a number of libraries that do not work under Python 3. If you want to use this template under Python 3, you will need to either remove those libraries or find replacements for them.
 
-The libraries I am aware of that do not support Python 3:
-
-* python-memcached (use python3-memcached)
+* use python3-memcached instead of python-memcached
 
 
 
 ## Prerequisites ##
 
-- Python 2.6 or 2.7
+- Python 2.6 , 2.7 , 3 
 - pip
 - virtualenv (virtualenvwrapper is recommended for use during development)
 
