@@ -16,6 +16,9 @@ This version of the project template includes new options for Django 1.8
    - $ cd project
    - $ source bin/activate
 - Make sure you have libffi installed ($ sudo apt-get install libffi-dev)
+
+- Now either run  install.sh or run the following manualy: 
+
 - $ pip install "Django>=1.8"
 - $ bin/django-admin.py startproject --template https://github.com/allox/django-base-template-1.8/zipball/master --extension py,md,rst mainapp
 - $ mv mainapp/ src
