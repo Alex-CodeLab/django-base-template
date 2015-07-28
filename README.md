@@ -11,11 +11,15 @@ This version of the project template includes new options for Django 1.8
 
 ## Installation ##
 
+
+- Make sure you have libffi installed 
+   -$ sudo apt-get install libffi-dev
+- (python3) Make sure you have libevent-dev, python3-dev  installed 
+   - $ sudo apt-get install libevent-dev python3-dev
 - Create your working environment and virtualenv:
    - $ virtualenv project
    - $ cd project
    - $ source bin/activate
-- Make sure you have libffi installed ($ sudo apt-get install libffi-dev)
 
 - Now either run  install.sh or run the following manualy: 
 
