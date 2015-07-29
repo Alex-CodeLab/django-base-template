@@ -21,13 +21,13 @@ This version of the project template includes new options for Django 1.8
 
    python3:
    - $ virtualenv -p python3 project
-
    - $ cd project
    - $ source bin/activate
 
 - Now either run  install.sh 
       - $ source <(wget -qO- https://raw.githubusercontent.com/alloxjango-base-template-1.8/master/install.sh)
-  or run the following manually: 
+  
+or run the following manually: 
 
 - $ pip install "Django>=1.8"
 - $ bin/django-admin.py startproject --template https://github.com/allox/django-base-template-1.8/zipball/master --extension py,md,rst mainapp
