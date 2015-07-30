@@ -14,7 +14,7 @@
 
 
 
-                {% if request.user.is_authenticated  %}
+                {% if user.is_authenticated  %}
                 <li class="">
 
                 </li>
@@ -23,11 +23,11 @@
                 {% endif %}
             </ul>
 
-            {% if request.user.is_authenticated  %}
+            {% if user.is_authenticated  %}
             <ul class="nav navbar-nav pull-right">
                 <li class="dropdown">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-                        <i class="halflings-icon white user"></i>{{ request.user }}
+                        <i class="halflings-icon white user"></i>{{ user }}
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
