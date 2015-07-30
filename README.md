@@ -25,7 +25,7 @@ This version of the project template includes new options for Django 1.8
    - $ source bin/activate
 
 - Now either run  install.sh 
-      - $ source <(wget -qO- https://raw.githubusercontent.com/alloxjango-base-template-1.8/master/install.sh)
+      - $ source <(wget -qO- https://raw.githubusercontent.com/allox/django-base-template-1.8/master/install.sh)
   
 or run the following manually: 
 
