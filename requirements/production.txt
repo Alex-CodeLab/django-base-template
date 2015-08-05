@@ -1,26 +1,15 @@
 # Install everything that needs to be compiled
 -r compiled.txt
 
-# Django stuff
-#Django>=1.7.8
-
 # Templates
 django_compressor
 
 # Security
 bleach
-#cef
-
-# Logging
-#raven
 
 # Celery: Message queue
 celery
 django-celery
-
-# L10n/i18n
-#Babel
-#-e git://github.com/clouserw/tower.git#egg=tower
 
 # Caching
 python-memcached
@@ -31,9 +20,5 @@ django-debug-toolbar
 # Registration /Authentication
 django-allauth
 
-
-# Migrations
-#South
-
-# Feature testing
-#django-waffle
+# Image processing
+Pillow
