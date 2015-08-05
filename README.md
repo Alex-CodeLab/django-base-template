@@ -3,11 +3,10 @@
 
 ## About ##
 
-This 'best practice' template is based off of the work of Mozilla Playdoh, 
-Two Scoops of Django and [django-base-template](https://github.com/xenith/django-base-template). 
+This template is the result of many 'best practice' strategies for setting up a django project structure.
 It aims to be simple, yet complete.
 
-This version of the project template includes new options for Django 1.8
+This version of the project template includes new options for Django 1.8 , has bootstrap3 installed and Allauth configured.
 
 ## Installation ##
 
@@ -21,11 +20,12 @@ This version of the project template includes new options for Django 1.8
 
    python3:
    - $ virtualenv -p python3 project
+    
    - $ cd project
    - $ source bin/activate
 
 - Now either run  install.sh 
-      - $ source <(wget -qO- https://raw.githubusercontent.com/alloxjango-base-template-1.8/master/install.sh)
+      - $ source <(wget -qO- https://raw.githubusercontent.com/allox/django-base-template-1.8/master/install.sh)
   
 or run the following manually: 
 
@@ -41,7 +41,6 @@ or run the following manually:
 - $ ./manage.py migrate
 - $ ./manage.py collectstatic
 - $ ./manage.py runserver
-
 
 
 
