@@ -21,8 +21,8 @@ This version of the project template includes new options for Django 1.8 , has b
    python3:
    - $ virtualenv -p python3 project
     
-   - $ cd project
-   - $ source bin/activate
+- $ cd project
+- $ source bin/activate
 
 - Now either run  install.sh 
       - $ source <(wget -qO- https://raw.githubusercontent.com/allox/django-base-template-1.8/master/install.sh)
