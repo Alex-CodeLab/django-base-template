@@ -8,6 +8,11 @@
    ========================================================================== */
 
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
    background: url("") repeat scroll 0 0 rgba(1, 1, 11, 0.01);
    font-size: 13px;
@@ -20,6 +25,14 @@ body {
   padding-bottom: 20px;
 }
 
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+}
 
 .jumbotron {
     color: white;
