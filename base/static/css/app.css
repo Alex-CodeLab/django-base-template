@@ -131,3 +131,8 @@ ul.nav > li >a:hover, .nav > li > a:focus{
 .jumbotron .btn-default{
     border-color: #666;
 }
+
+.modal-content {
+    z-index: 1050;
+
+}
