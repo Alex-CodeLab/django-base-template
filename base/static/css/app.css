@@ -116,14 +116,14 @@ ul.nav > li >a:hover, .nav > li > a:focus{
 }
 
 .btn-default {
-    background-image: linear-gradient(to bottom, #fff 0px, #aaa 100%);
+    background-image: linear-gradient(to bottom, #ddd 0px, #ddd 100%);
     background-repeat: repeat-x;
-    border-color: #aaa;
-    text-shadow: 0 1px 0 #fff;
+    border-color: #ddd;
+    text-shadow: 0 1px 0 #eee;
 }
 
 .btn-default:hover{
-    background-image: linear-gradient(to bottom, #eee 0px, #ccc 100%);
+    background-image: linear-gradient(to bottom, #ccc 0px, #ccc 100%);
     background-color: #ccc ;
     border-color: #bbb;
 }
@@ -136,3 +136,13 @@ ul.nav > li >a:hover, .nav > li > a:focus{
     z-index: 1050;
 
 }
+
+.alert {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+
+}
+
