@@ -3,8 +3,11 @@
 
 ## About ##
 
-This template is the result of many 'best practice' strategies for setting up a django project structure.
-It aims to be simple, yet complete.
+This template installs a fully functional Django website in less then 3 minutes.
+
+There are different way of setting up a django environment, 
+and this template is the result of many 'best practice' strategies for setting up a django project structure.
+It aims to be simple, clear, yet complete.
 
 This version of the project template includes new options for Django 1.8 , has bootstrap3 installed and Allauth configured.
 
@@ -13,7 +16,7 @@ This version of the project template includes new options for Django 1.8 , has b
 
 - Make sure you have libffi installed 
    - $ sudo apt-get install libffi-dev
-- (python3) Make sure you have libevent-dev, python3-dev  installed 
+- (when using python3) Make sure you have libevent-dev, python3-dev  installed 
    - $ sudo apt-get install libevent-dev python3-dev
 - Create your working environment and virtualenv:
    - $ virtualenv project
