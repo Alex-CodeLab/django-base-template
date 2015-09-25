@@ -11,7 +11,7 @@ It aims to be simple, clear, yet complete.
 
 This version of the project template includes new options for Django 1.8 , has bootstrap3 installed and Allauth configured.
 
-Demo: http:/dj.lxer.eu
+Demo: http://dj.lxer.eu
 
 
 ## Installation ##
