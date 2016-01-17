@@ -5,11 +5,11 @@
 
 This template installs a fully functional Django website in less then 3 minutes.
 
+This version of the project template includes new options for Django 1.8 , has bootstrap3 installed and Allauth configured.
+
 There are different way of setting up a django environment, 
 and this template is the result of many 'best practice' strategies for setting up a django project structure.
 It aims to be simple, clear, yet complete.
-
-This version of the project template includes new options for Django 1.8 , has bootstrap3 installed and Allauth configured.
 
 Demo: http://dj.lxer.eu
 
