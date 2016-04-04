@@ -22,3 +22,8 @@ django-allauth
 
 # Image processing
 Pillow
+
+fabric
+billiard
+django-appconf
+sqlparse
