@@ -156,13 +156,6 @@ AUTHENTICATION_BACKENDS = (
 )
 
 
-# List of callables that know how to import templates from various sources.
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-)
-
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -267,14 +260,14 @@ MANAGERS = ADMINS
 # SECURITY WARNING: don't run with debug turned on in production!
 # Debugging displays nice error messages, but leaks memory. Set this to False
 # on all server instances and True only for development.
-DEBUG = TEMPLATE_DEBUG = False
+DEBUG = False
 
 # Is this a development instance? Set this to True on development/master
 # instances and False on stage/prod.
 DEV = False
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
-# See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
+# See https://docs.djangoproject.com/en/1.8/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
 
 # SECURITY WARNING: keep the secret key used in production secret!
