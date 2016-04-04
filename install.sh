@@ -14,7 +14,7 @@ cp mainapp/settings/local-dist.py mainapp/settings/local.py && \
 
 echo "Install completed. Create Database" && \
 chmod +x manage.py  && \
-./manage.py syncdb  && \
 ./manage.py migrate && \
+./manage.py createsuperuser && \
 ./manage.py collectstatic && \
 ./manage.py runserver
