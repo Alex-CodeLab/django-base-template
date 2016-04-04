@@ -22,7 +22,9 @@ Demo: http://dj.lxer.eu
 - (when using python3) Make sure you have libevent-dev, python3-dev  installed 
    - $ sudo apt-get install libevent-dev python3-dev
 - Install if not installed already (needed for bcrypt):
-   - $ sudo apt-get install build-essential libssl-dev libffi-dev python-dev
+   - $ sudo apt-get install build-essential libssl-dev libffi-dev python-dev 
+- Install if not installed already (needed for pillow):
+   - $ sudo apt-get install libtiff5-dev libjpeg8-dev
    
 - Create your working environment and virtualenv:
    - $ virtualenv project
