@@ -48,7 +48,7 @@ or run the following manually:
 - $ pip install -r requirements/local.txt
 - $ cp mainapp/settings/local-dist.py mainapp/settings/local.py
 - $ chmod +x manage.py
-- $ ./manage.py syncdb
+- $ ./manage.py makemigrations
 - $ ./manage.py migrate
 - $ ./manage.py collectstatic
 - $ ./manage.py runserver
