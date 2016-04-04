@@ -21,6 +21,9 @@ Demo: http://dj.lxer.eu
    - $ sudo apt-get install libffi-dev
 - (when using python3) Make sure you have libevent-dev, python3-dev  installed 
    - $ sudo apt-get install libevent-dev python3-dev
+- Install if not installed already (needed for bcrypt):
+   - $ sudo apt-get install build-essential libssl-dev libffi-dev python-dev
+   
 - Create your working environment and virtualenv:
    - $ virtualenv project
 
