@@ -49,7 +49,7 @@ CACHES = {
 # SECURITY WARNING: don't run with debug turned on in production!
 # Debugging displays nice error messages, but leaks memory. Set this to False
 # on all server instances and True only for development.
-DEBUG = TEMPLATE_DEBUG = True
+DEBUG = True
 
 # Is this a development instance? Set this to True on development/master
 # instances and False on stage/prod.
