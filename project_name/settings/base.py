@@ -19,6 +19,14 @@ def get_env_setting(setting):
         error_msg = "Set the %s env variable" % setting
         raise ImproperlyConfigured(error_msg)
 
+# Is this a development instance? Set this to True on development/master
+# instances and False on stage/prod.
+DEV = True
+
+# SECURITY WARNING: don't run with debug turned on in production!
+# Debugging displays nice error messages, but leaks memory. Set this to False
+# on all server instances and True only for development.
+DEBUG = True
 
 # Your project root
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__) + "../../../")
@@ -258,14 +266,6 @@ ADMINS = (
 )
 MANAGERS = ADMINS
 
-# SECURITY WARNING: don't run with debug turned on in production!
-# Debugging displays nice error messages, but leaks memory. Set this to False
-# on all server instances and True only for development.
-DEBUG = True
-
-# Is this a development instance? Set this to True on development/master
-# instances and False on stage/prod.
-DEV = True
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.8/ref/settings/#allowed-hosts
