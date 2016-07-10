@@ -166,6 +166,7 @@ TEMPLATES = [
         ],
         'APP_DIRS': True,
         'OPTIONS': {
+            'debug': DEBUG,
             'context_processors': [
                 # Insert your TEMPLATE_CONTEXT_PROCESSORS here or use this
                 # list if you haven't customized them:
@@ -260,7 +261,7 @@ MANAGERS = ADMINS
 # SECURITY WARNING: don't run with debug turned on in production!
 # Debugging displays nice error messages, but leaks memory. Set this to False
 # on all server instances and True only for development.
-DEBUG = TEMPLATE_DEBUG = True
+DEBUG = True
 
 # Is this a development instance? Set this to True on development/master
 # instances and False on stage/prod.
