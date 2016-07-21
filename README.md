@@ -1,5 +1,5 @@
 
-# Django 1.8 Project Template - Bootstrap3, Allauth#
+# Django 1.9 Project Template - Bootstrap3, Allauth#
 
 ## About ##
 
