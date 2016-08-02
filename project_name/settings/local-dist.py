@@ -39,6 +39,18 @@ ADMINS = (
 MANAGERS = ADMINS
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND  = 'django.core.mail.backends.smtp.EmailBackend'
+
+#EMAIL_HOST_USER    = ''
+#EMAIL_HOST_PASSWORD = ''
+#EMAIL_HOST         = '' 
+#EMAIL_HOST_USER    = ''
+#EMAIL_HOST_PASSWORD = ''
+#SERVER_EMAIL       = ''
+#SMTP_ENABLED       = True
+#EMAIL_USE_TLS      = True
+
+
 
 CACHES = {
     'default': {
