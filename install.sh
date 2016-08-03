@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Install Django "
-pip install "Django>=1.8,<=1.10 "
+pip install "Django>=1.8,<1.10 "
 
 echo "Startproject"
 bin/django-admin.py startproject --template https://github.com/allox/django-base-template-1.8/zipball/master --extension py,md,rst mainapp && \
