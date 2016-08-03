@@ -6,7 +6,7 @@
 
 This template installs a fully functional Django website in just a few minutes.
 
-Works for Django 1.8 - 1.9.
+Works for Django 1.8 - 1.9.*
 
 This version of the project template includes new options for Django 1.8, has bootstrap3 installed and Allauth configured.
 
@@ -43,7 +43,7 @@ Demo: http://dj.lxer.eu
   
 or run the following manually: 
 
-- $ pip install "Django>=1.8"
+- $ pip install "Django>=1.8,<1.10"
 - $ bin/django-admin.py startproject --template https://github.com/allox/django-base-template-1.8/zipball/master --extension py,md,rst mainapp
 - $ mv mainapp/ src
 - $ cd src
