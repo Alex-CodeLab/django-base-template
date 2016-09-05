@@ -4,7 +4,7 @@
 {% block content %}
 
 {% if user %}
-    <h1>Welcome, {{user.first_name}}</h1>
+    <h1>Welcome, {{ user }}</h1>
     <p>Following is the Extra information provided to allauth:</p>
     {% for account in user.socialaccount_set.all %}
         <h2 style="text-transform:capitalize;">{{ account.provider }} account data</h2>
