@@ -1,14 +1,14 @@
 
-# Django 1.9 Project Template - Bootstrap3, Allauth#
+# Django  Project Template - Bootstrap3, Allauth#
 
 ## About ##
 
 
 This template installs a fully functional Django website in just a few minutes.
 
-Works for Django 1.8 - 1.9.*
+Works for Django 1.8 - 1.9.*  1.10   
 
-This version of the project template includes new options for Django 1.8, has bootstrap3 installed and Allauth configured.
+This version of the project template includes new options for Django 1.8, 1.9, 1.10 , has bootstrap3 installed and Allauth configured.
 
 There are different way of setting up a django environment, 
 and this template is the result of many 'best practice' strategies for setting up a django project structure.
@@ -43,7 +43,7 @@ Demo: http://dj.lxer.eu
   
 or run the following manually: 
 
-- $ pip install "Django>=1.8,<1.10"
+- $ pip install Django
 - $ bin/django-admin.py startproject --template https://github.com/allox/django-base-template-1.8/zipball/master --extension py,md,rst mainapp
 - $ mv mainapp/ src
 - $ cd src
@@ -53,6 +53,7 @@ or run the following manually:
 - $ chmod +x manage.py
 - $ ./manage.py makemigrations
 - $ ./manage.py migrate
+- $ ./manage.py createsuperuser
 - $ ./manage.py collectstatic
 - $ ./manage.py runserver
 
