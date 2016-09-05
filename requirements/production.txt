@@ -8,8 +8,8 @@ django_compressor
 bleach
 
 # Celery: Message queue
-celery
-django-celery
+#celery
+#django-celery
 
 # Caching
 python-memcached
@@ -27,3 +27,4 @@ Pillow
 billiard
 django-appconf
 sqlparse
+django-extensions

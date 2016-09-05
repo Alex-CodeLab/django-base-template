@@ -1,16 +1,22 @@
 #!/bin/bash
 echo "Install Django "
-pip install "Django>=1.8,<1.10 "
+version=$(python -V 2>&1 | grep -Po '(?<=Python )(.)')
+if [ "$version" -lt 3 ]; then
+pip install 'django>=1.11,<2.0'
+else
+pip install 'django>=2.0'
+fi
+
 
 echo "Startproject"
-bin/django-admin.py startproject --template https://github.com/allox/django-base-template-1.8/zipball/master --extension py,md,rst mainapp && \
+bin/django-admin.py startproject --template https://github.com/allox/django-base-template-1.8/zipball/master --extension py,md,rst config && \
 
-mv mainapp/ src && \
+mv config/ src && \
 
 echo "Install requirements" && \
 cd src && \
 pip install -r requirements/local.txt && \
-cp mainapp/settings/local-dist.py mainapp/settings/local.py && \
+cp config/settings/local-dist.py config/settings/local.py && \
 
 echo "Install completed. Create Database" && \
 chmod +x manage.py  && \

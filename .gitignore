@@ -22,4 +22,6 @@ test_db/
 *.sublime-workspace
 media/*
 static/*
-mainapp/
+config/
+.idea/
+

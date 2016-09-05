@@ -38,7 +38,7 @@ SUPPORTED_NONLOCALES = ['media', 'admin', 'static']
 LANGUAGE_CODE = 'en-us'
 
 # Defines the views served for root URLs.
-ROOT_URLCONF = 'mainapp.urls'
+ROOT_URLCONF = 'config.urls'
 
 # Application definition
 INSTALLED_APPS = (
@@ -53,17 +53,17 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     # Third-party apps, patches, fixes
-    'djcelery',
+    'django_extensions',
     'debug_toolbar',
     'compressor',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
-    'allauth.socialaccount',    
-    
+    'allauth.socialaccount',
+
 
     # Application base, containing global templates.
-    'base',
+    'layout',
 
     # Local apps, referenced via appname
 )
@@ -142,7 +142,7 @@ STATICFILES_FINDERS = (
     'compressor.finders.CompressorFinder',
 )
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -169,8 +169,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [    
                # insert your TEMPLATE_DIRS here
-               os.path.join(PROJECT_ROOT, 'base/templates'),
-               os.path.join(PROJECT_ROOT, 'base/templates/allauth'),
+               os.path.join(PROJECT_ROOT, 'layout/templates'),
+               os.path.join(PROJECT_ROOT, 'layout/templates/allauth'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -200,7 +200,7 @@ def custom_show_toolbar(request):
 
 DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
-    'SHOW_TOOLBAR_CALLBACK': 'mainapp.settings.base.custom_show_toolbar',
+    'SHOW_TOOLBAR_CALLBACK': 'config.settings.base.custom_show_toolbar',
     'HIDE_DJANGO_SQL': True,
     'TAG': 'body',
     'SHOW_TEMPLATE_CONTEXT': True,
@@ -214,18 +214,20 @@ DEBUG_TOOLBAR_CONFIG = {
 # http://django-debug-toolbar.readthedocs.org/en/1.0/installation.html#explicit-setup
 #DEBUG_TOOLBAR_PATCH_SETTINGS = False
 
-# DEBUG_TOOLBAR_PANELS = (
-#     #'debug_toolbar_user_panel.panels.UserPanel',
-#     'debug_toolbar.panels.version.VersionDebugPanel',
-#     'debug_toolbar.panels.timer.TimerDebugPanel',
-#     'debug_toolbar.panels.settings_vars.SettingsVarsDebugPanel',
-#     'debug_toolbar.panels.headers.HeaderDebugPanel',
-#     'debug_toolbar.panels.request_vars.RequestVarsDebugPanel',
-#     'debug_toolbar.panels.template.TemplateDebugPanel',
-#     'debug_toolbar.panels.sql.SQLDebugPanel',
-#     'debug_toolbar.panels.signals.SignalDebugPanel',
-#     'debug_toolbar.panels.logger.LoggingPanel',
-# )
+#DEBUG_TOOLBAR_PANELS = [
+#    'debug_toolbar.panels.versions.VersionsPanel',
+#    'debug_toolbar.panels.timer.TimerPanel',
+#    'debug_toolbar.panels.settings.SettingsPanel',
+#    'debug_toolbar.panels.headers.HeadersPanel',
+#    'debug_toolbar.panels.request.RequestPanel',
+#    'debug_toolbar.panels.sql.SQLPanel',
+#    'debug_toolbar.panels.staticfiles.StaticFilesPanel',
+#    'debug_toolbar.panels.templates.TemplatesPanel',
+#    'debug_toolbar.panels.cache.CachePanel',
+#    'debug_toolbar.panels.signals.SignalsPanel',
+#    'debug_toolbar.panels.logging.LoggingPanel',
+#    'debug_toolbar.panels.redirects.RedirectsPanel',
+#]
 
 # Specify a custom user model to use
 #AUTH_USER_MODEL = 'accounts.MyUser'
@@ -233,7 +235,7 @@ DEBUG_TOOLBAR_CONFIG = {
 FILE_UPLOAD_PERMISSIONS = 0o0664
 
 # The WSGI Application to use for runserver
-WSGI_APPLICATION = 'mainapp.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 # Define your database connections
 DATABASES = {
@@ -297,26 +299,26 @@ INTERNAL_IPS = ('127.0.0.1')
 
 SERVER_EMAIL = "webmaster@example.com"
 DEFAULT_FROM_EMAIL = "webmaster@example.com"
-SYSTEM_EMAIL_PREFIX = "[mainapp]"
+SYSTEM_EMAIL_PREFIX = ""
 
 ## Log settings
 
 LOG_LEVEL = logging.INFO
 HAS_SYSLOG = True
-SYSLOG_TAG = "http_app_mainapp"  # Make this unique to your project.
+SYSLOG_TAG = "http_app_PROJECT"  # Make this unique to your project.
 # Remove this configuration variable to use your custom logging configuration
 LOGGING_CONFIG = None
 LOGGING = {
     'version': 1,
     'loggers': {
-        'mainapp': {
+        'config': {
             'level': "DEBUG"
         }
     }
 }
 
 # Common Event Format logging parameters
-#CEF_PRODUCT = 'mainapp'
+#CEF_PRODUCT = 'config'
 #CEF_VENDOR = 'Your Company'
 #CEF_VERSION = '0'
 #CEF_DEVICE_VERSION = '0'

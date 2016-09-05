@@ -2,7 +2,10 @@
 
 from django.conf.urls import include, url
 from django.contrib import admin
-from base.views import profile
+from layout.views import profile
+from django.conf import settings
+from django.contrib.auth.views import logout
+from django.views.static import serve
 admin.autodiscover()
 
 
@@ -16,11 +19,18 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^bad/$', bad),
-    url(r'', include('base.urls')),
+    url(r'', include('layout.urls')),
     #all-auth 
     url(r'^accounts/', include('allauth.urls')),
     url(r'^accounts/profile', profile),    
-    #url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
-    
-    
+    url(r'^accounts/logout/$', logout, {'next_page': '/'}),
 ]
+
+if settings.DEBUG:
+    # static files (images, css, javascript, etc.)
+    urlpatterns += [ url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT})]
+
+    
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += [ url(r'^__debug__/', include(debug_toolbar.urls)),]

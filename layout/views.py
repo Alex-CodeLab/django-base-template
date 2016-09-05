@@ -1,10 +1,12 @@
-""" Views for the base application """
+""" Views for the layout application """
 
 from django.shortcuts import render, render_to_response, HttpResponseRedirect
+import django
 
 def home(request):
     """ Default view for the root """
-    return render(request, 'base/home.html')
-    
+    djangoversion = django.get_version()
+    return render(request, 'layout/home.html',{'djangoversion':djangoversion })
+
 def profile(request):
     return  render(request, "user/profile.html" )    

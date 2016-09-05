@@ -1,61 +1,70 @@
 
-# Django 1.9 Project Template - Bootstrap3, Allauth#
+# Django2/Django1.11 complete installer #
 
 ## About ##
 
 
 This template installs a fully functional Django website in just a few minutes.
 
-Works for Django 1.8 - 1.9.*
+Django 1.11 (for python2.7)
+Django 2 (python3)
+includes bootstrap3, Allauth, and some other useful apps.
 
-This version of the project template includes new options for Django 1.8, has bootstrap3 installed and Allauth configured.
+The goal of this template is to set up a fully functional django project in minutes, and have a clear project structure.
 
-There are different way of setting up a django environment, 
-and this template is the result of many 'best practice' strategies for setting up a django project structure.
-It aims to be simple, clear, yet complete.
+```
+src                   # project root  
+├── manage.py
+├── /static
+├── /config           # project configuration 
+│   ├── /settings   
+│   │   ├── base.py   # project settings   
+│   │   ├── local.py  # local settings (development)
+│   ├── urls.py        
+│   ├── wsgi.py
+├── /layout           # base templates and static files  
+│   ├── models.py
+│   ├── /static
+│   ├── /templates
+│    ...
+├── /myApp            # create your app using Startapp..    
+    ... 
+```
 
 Demo: http://dj.lxer.eu
 
+![](http://i.imgur.com/kJcha7b.gif)
 
 ## Installation ##
 
 
 - Make sure you have libffi installed 
-   - $ sudo apt-get install libffi-dev
+``` 
+$ sudo apt-get install libffi-dev
+```
 - (when using python3) Make sure you have libevent-dev, python3-dev  installed 
-   - $ sudo apt-get install libevent-dev python3-dev
+```
+$ sudo apt-get install libevent-dev python3-dev
+```
 - Install if not installed already (needed for bcrypt):
-   - $ sudo apt-get install build-essential libssl-dev libffi-dev python-dev 
-- Install if not installed already (needed for pillow):
-   - $ sudo apt-get install libtiff5-dev libjpeg8-dev
-   
+```
+$ sudo apt-get install build-essential libssl-dev libffi-dev python-dev libtiff5-dev libjpeg8-dev
+```   
 - Create your working environment and virtualenv:
-   - $ virtualenv project
-
-   python3:
-   - $ virtualenv -p python3 project
-    
-- $ cd project
-- $ source bin/activate
-
-- Now there are 2 options: either run  install.sh 
-      - $ source <(wget -qO- https://raw.githubusercontent.com/allox/django-base-template-1.8/master/install.sh)
+```
+$ virtualenv project
+$ virtualenv -p python3 project  # for python3/django2
+```
+```    
+$ cd project
+$ source bin/activate
+```
+- run install.sh :
+```
+$ source <(wget -qO- https://raw.githubusercontent.com/FeedTheWeb/django-base-template/master/install.sh)
+```
   
-or run the following manually: 
-
-- $ pip install "Django>=1.8,<1.10"
-- $ bin/django-admin.py startproject --template https://github.com/allox/django-base-template-1.8/zipball/master --extension py,md,rst mainapp
-- $ mv mainapp/ src
-- $ cd src
-- Uncomment your preferred database adapter in requirements/compiled.txt (MySQL, Postgresql, or skip this step to stick with SQLite)
-- $ pip install -r requirements/local.txt
-- $ cp mainapp/settings/local-dist.py mainapp/settings/local.py
-- $ chmod +x manage.py
-- $ ./manage.py makemigrations
-- $ ./manage.py migrate
-- $ ./manage.py collectstatic
-- $ ./manage.py runserver
-
+...and that's all!
 
 
 
