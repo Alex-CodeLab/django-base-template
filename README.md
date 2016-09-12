@@ -39,7 +39,7 @@ Demo: http://dj.lxer.eu
 - $ source bin/activate
 
 - Now there are 2 options: either run  install.sh 
-      - $ source <(wget -qO- https://raw.githubusercontent.com/allox/django-base-template-1.8/master/install.sh)
+      - $ source <(wget -qO- https://raw.githubusercontent.com/allox/django-base-template/master/install.sh)
   
 or run the following manually: 
 
