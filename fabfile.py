@@ -20,6 +20,7 @@ env.project_dir = '/srv/www/mainapp/mainapp'
 env.static_root = '/srv/www/mainapp/static/'
 env.virtualenv = '/srv/www/mainapp/.virtualenv'
 env.code_repo = 'git@github.com:user/mainapp.git'
+env.uwsgi_ini = '/etc/uwsgi/vassals/mainapp_uwsgi.ini'
 env.django_settings_module = 'mainapp.settings'
 
 # Python version
@@ -73,20 +74,44 @@ def ensure_src_dir():
             run('git clone %s .' % (env.code_repo))
 
 
+
+
 def push_sources():
     """
     Push source code to server
     """
-    ensure_src_dir()
+    #ensure_src_dir()
     local('git push origin master')
     with cd(env.code_dir):
         run('git pull origin master')
 
 
 @task
+def reload():
+    """ Reload uswgi ini """
+    run('touch %s' , env.uwsgi_ini)
+
+
+@task
 def run_tests():
     """ Runs the Django test suite as is.  """
     local("./manage.py test")
+
+
+@task
+def pull(app):
+    "git pull per app"
+    with cd(env.project_dir+'/'+ app ):
+        run('git pull')
+    reload()
+
+
+@task
+def collectstatic():
+    "collect static files"
+    with cd(env.project_dir):
+        run_venv("./manage.py collectstatic -v 0 --clear --noinput")
+        run("chown -R www-data:www-data static")
 
 
 @task
@@ -100,78 +125,6 @@ def version():
 def uname():
     """ Prints information about the host. """
     run("uname -a")
-
-
-@task
-def webserver_stop():
-    """
-    Stop the webserver that is running the Django instance
-    """
-    run("service apache2 stop")
-
-
-@task
-def webserver_start():
-    """
-    Starts the webserver that is running the Django instance
-    """
-    run("service apache2 start")
-
-
-@task
-def webserver_restart():
-    """
-    Restarts the webserver that is running the Django instance
-    """
-    if DJANGO_SERVER_RESTART:
-        with cd(env.code_dir):
-            run("touch %s/wsgi.py" % env.project_dir)
-    else:
-        with settings(warn_only=True):
-            webserver_stop()
-        webserver_start()
-
-
-def restart():
-    """ Restart the wsgi process """
-    with cd(env.code_dir):
-        run("touch %s/mainapp/wsgi.py" % env.code_dir)
-
-
-def build_static():
-    assert env.static_root.strip() != '' and env.static_root.strip() != '/'
-    with virtualenv(env.virtualenv):
-        with cd(env.code_dir):
-            run_venv("./manage.py collectstatic -v 0 --clear --noinput")
-
-    run("chmod -R ugo+r %s" % env.static_root)
-
-
-@task
-def first_deployment_mode():
-    """
-    Use before first deployment to switch on fake south migrations.
-    """
-    env.initial_deploy = True
-
-
-@task
-def update_database(app=None):
-    """
-    Update the database (run the migrations)
-    Usage: fab update_database:app_name
-    """
-    with virtualenv(env.virtualenv):
-        with cd(env.code_dir):
-            if getattr(env, 'initial_deploy', False):
-                run_venv("./manage.py syncdb --all")
-                run_venv("./manage.py migrate --fake --noinput")
-            else:
-                run_venv("./manage.py syncdb --noinput")
-                if app:
-                    run_venv("./manage.py migrate %s --noinput" % app)
-                else:
-                    run_venv("./manage.py migrate --noinput")
 
 
 @task
@@ -196,15 +149,3 @@ def sshagent_run(cmd):
         )
 
 
-@task
-def deploy():
-    """
-    Deploy the project.
-    """
-    with settings(warn_only=True):
-        webserver_stop()
-    push_sources()
-    install_dependencies()
-    update_database()
-    build_static()
-    webserver_start()
