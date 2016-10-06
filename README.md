@@ -6,7 +6,6 @@
 
 This template installs a fully functional Django website in just a few minutes.
 
-Works for Django 1.8 - 1.9  1.10   
 
 This version of the project template includes new options for Django 1.8, 1.9, 1.10 , has bootstrap3 installed and Allauth configured.
 
