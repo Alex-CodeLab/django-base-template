@@ -37,25 +37,12 @@ Demo: http://dj.lxer.eu
 - $ cd project
 - $ source bin/activate
 
-- Now there are 2 options: either run  install.sh 
+- run install.sh :
       - $ source <(wget -qO- https://raw.githubusercontent.com/allox/django-base-template/master/install.sh)
   
-or run the following manually: 
+(To see what actually happens check https://raw.githubusercontent.com/allox/django-base-template/master/install.sh )
 
-- $ pip install Django
-- $ bin/django-admin.py startproject --template https://github.com/allox/django-base-template-1.8/zipball/master --extension py,md,rst mainapp
-- $ mv mainapp/ src
-- $ cd src
-- Uncomment your preferred database adapter in requirements/compiled.txt (MySQL, Postgresql, or skip this step to stick with SQLite)
-- $ pip install -r requirements/local.txt
-- $ cp mainapp/settings/local-dist.py mainapp/settings/local.py
-- $ chmod +x manage.py
-- $ ./manage.py makemigrations
-- $ ./manage.py migrate
-- $ ./manage.py createsuperuser
-- $ ./manage.py collectstatic
-- $ ./manage.py runserver
-
+...and that's all!
 
 
 
