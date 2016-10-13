@@ -3,6 +3,9 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 from base.views import profile
+from django.conf import settings
+from django.contrib.auth.views import logout
+from django.views.static import serve
 admin.autodiscover()
 
 
@@ -20,9 +23,7 @@ urlpatterns = [
     #all-auth 
     url(r'^accounts/', include('allauth.urls')),
     url(r'^accounts/profile', profile),    
-    #url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
-    
-    
+    url(r'^accounts/logout/$', logout, {'next_page': '/'}),
 ]
 
 if settings.DEBUG:
