@@ -27,4 +27,4 @@ Pillow
 billiard
 django-appconf
 sqlparse
-django_extensions
+django-extensions
