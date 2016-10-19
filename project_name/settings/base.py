@@ -53,7 +53,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     # Third-party apps, patches, fixes
-    'djcelery',
+    'django_extensions',
     'debug_toolbar',
     'compressor',
     'django.contrib.sites',
