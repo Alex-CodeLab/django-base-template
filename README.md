@@ -15,7 +15,7 @@ It aims to be simple, clear, yet complete.
 
 Demo: http://dj.lxer.eu
 
-
+![django installation](http://pasteio.com/m236f398c142f691815602b8f1c616bbf)
 ## Installation ##
 
 
