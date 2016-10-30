@@ -1,7 +1,7 @@
 """urlconf for the base application"""
 
 from django.conf.urls import url
-from views import home
+from base.views import home
 
 
 urlpatterns =[
