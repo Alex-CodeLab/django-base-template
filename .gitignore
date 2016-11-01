@@ -23,3 +23,5 @@ test_db/
 media/*
 static/*
 config/
+.idea/
+
