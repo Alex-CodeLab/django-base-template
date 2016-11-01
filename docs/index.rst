@@ -1,5 +1,5 @@
 ========================================
-Welcome to mainapp's documentation!
+Welcome to the project documentation!
 ========================================
 
 This is a documentation template for a **web application using Django 1.5**.

@@ -3,14 +3,14 @@ echo "Install Django "
 pip install Django
 
 echo "Startproject"
-bin/django-admin.py startproject --template https://github.com/allox/django-base-template-1.8/zipball/master --extension py,md,rst mainapp && \
+bin/django-admin.py startproject --template https://github.com/allox/django-base-template-1.8/zipball/master --extension py,md,rst config && \
 
-mv mainapp/ src && \
+mv config/ src && \
 
 echo "Install requirements" && \
 cd src && \
 pip install -r requirements/local.txt && \
-cp mainapp/settings/local-dist.py mainapp/settings/local.py && \
+cp config/settings/local-dist.py config/settings/local.py && \
 
 echo "Install completed. Create Database" && \
 chmod +x manage.py  && \

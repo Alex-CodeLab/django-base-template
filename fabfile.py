@@ -14,14 +14,14 @@ from fabric.operations import _prefix_commands, _prefix_env_vars
 #from fabric.context_managers import cd, lcd, settings, hide
 
 # CHANGEME
-env.hosts = ['user@mainapp.example.com']
-env.code_dir = '/srv/www/mainapp'
-env.project_dir = '/srv/www/mainapp/mainapp'
-env.static_root = '/srv/www/mainapp/static/'
-env.virtualenv = '/srv/www/mainapp/.virtualenv'
-env.code_repo = 'git@github.com:user/mainapp.git'
-env.uwsgi_ini = '/etc/uwsgi/vassals/mainapp_uwsgi.ini'
-env.django_settings_module = 'mainapp.settings'
+env.hosts = ['user@project.example.com']
+env.code_dir = '/srv/project'
+env.project_dir = '/srv/project/src'
+env.static_root = '/srv/project/static/'
+env.virtualenv = '/srv/project/.virtualenv'
+#env.code_repo = 'git@github.com:user/mainapp.git'
+env.uwsgi_ini = '/etc/uwsgi/vassals/project_uwsgi.ini'
+env.django_settings_module = 'config.settings'
 
 # Python version
 PYTHON_BIN = "python2.7"

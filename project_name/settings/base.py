@@ -38,7 +38,7 @@ SUPPORTED_NONLOCALES = ['media', 'admin', 'static']
 LANGUAGE_CODE = 'en-us'
 
 # Defines the views served for root URLs.
-ROOT_URLCONF = 'mainapp.urls'
+ROOT_URLCONF = 'config.urls'
 
 # Application definition
 INSTALLED_APPS = (
@@ -200,7 +200,7 @@ def custom_show_toolbar(request):
 
 DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
-    'SHOW_TOOLBAR_CALLBACK': 'mainapp.settings.base.custom_show_toolbar',
+    'SHOW_TOOLBAR_CALLBACK': 'config.settings.base.custom_show_toolbar',
     'HIDE_DJANGO_SQL': True,
     'TAG': 'body',
     'SHOW_TEMPLATE_CONTEXT': True,
@@ -233,7 +233,7 @@ DEBUG_TOOLBAR_CONFIG = {
 FILE_UPLOAD_PERMISSIONS = 0o0664
 
 # The WSGI Application to use for runserver
-WSGI_APPLICATION = 'mainapp.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 # Define your database connections
 DATABASES = {
@@ -297,26 +297,26 @@ INTERNAL_IPS = ('127.0.0.1')
 
 SERVER_EMAIL = "webmaster@example.com"
 DEFAULT_FROM_EMAIL = "webmaster@example.com"
-SYSTEM_EMAIL_PREFIX = "[mainapp]"
+SYSTEM_EMAIL_PREFIX = ""
 
 ## Log settings
 
 LOG_LEVEL = logging.INFO
 HAS_SYSLOG = True
-SYSLOG_TAG = "http_app_mainapp"  # Make this unique to your project.
+SYSLOG_TAG = "http_app_PROJECT"  # Make this unique to your project.
 # Remove this configuration variable to use your custom logging configuration
 LOGGING_CONFIG = None
 LOGGING = {
     'version': 1,
     'loggers': {
-        'mainapp': {
+        'config': {
             'level': "DEBUG"
         }
     }
 }
 
 # Common Event Format logging parameters
-#CEF_PRODUCT = 'mainapp'
+#CEF_PRODUCT = 'config'
 #CEF_VENDOR = 'Your Company'
 #CEF_VERSION = '0'
 #CEF_DEVICE_VERSION = '0'
