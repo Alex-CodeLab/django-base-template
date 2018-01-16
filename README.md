@@ -32,8 +32,8 @@ src                   # project root
 ```
 
 
+![Imgur](https://i.imgur.com/3gbpaCU.gifv)
 
-<img src="http://i.imgur.com/kJcha7b.gif?raw=true" >
 
 ## Installation ##
 
