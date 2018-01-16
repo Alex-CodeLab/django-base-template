@@ -9,7 +9,7 @@ fi
 
 
 echo "Startproject"
-bin/django-admin.py startproject --template https://github.com/allox/django-base-template-1.8/zipball/master --extension py,md,rst config && \
+bin/django-admin.py startproject --template https://github.com/FeedTheWeb/django-base-template/zipball/master --extension py,md,rst config && \
 
 mv config/ src && \
 

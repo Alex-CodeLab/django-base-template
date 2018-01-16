@@ -19,5 +19,3 @@ if [ $? -ne 0 ]; then
     sudo apt-get install -q -y libffi-dev
 fi
 
-# install requirements from pip requirements file
-sudo pip install -r /vagrant/requirements.txt

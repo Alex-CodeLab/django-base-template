@@ -1,5 +1,3 @@
-# Install everything that needs to be compiled
--r compiled.txt
 
 # Templates
 django_compressor
@@ -28,3 +26,4 @@ billiard
 django-appconf
 sqlparse
 django-extensions
+bcrypt

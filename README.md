@@ -1,5 +1,5 @@
 
-# Django2/Django1.11 complete installer #
+# Django2 / Django1.11 complete installer #
 
 ## About ##
 
@@ -31,9 +31,9 @@ src                   # project root
     ... 
 ```
 
-Demo: http://dj.lxer.eu
 
-![](http://i.imgur.com/kJcha7b.gif)
+
+<img src="http://i.imgur.com/kJcha7b.gif?raw=true" >
 
 ## Installation ##
 
