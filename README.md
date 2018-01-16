@@ -30,9 +30,8 @@ src                   # project root
 ├── /myApp            # create your app using Startapp..    
     ... 
 ```
+<a href="http://i.imgur.com/kJcha7b.gif">Install demo</a>
 
-
-![Imgur](https://i.imgur.com/3gbpaCU.gifv)
 
 
 ## Installation ##
