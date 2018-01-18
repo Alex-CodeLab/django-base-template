@@ -33,21 +33,22 @@ src                   # project root
 <a href="http://i.imgur.com/kJcha7b.gif">Install demo</a>
 
 
+## Quick Install ##
+
+```
+source <(wget -qO- https://raw.githubusercontent.com/FeedTheWeb/django-base-template/master/install.sh)
+```
 
 ## Installation ##
 
 
-- Make sure you have libffi installed 
-``` 
-$ sudo apt-get install libffi-dev
-```
-- (when using python3) Make sure you have libevent-dev, python3-dev  installed 
+- (when using python3) Make sure you have libevent-dev, python3-dev installed : 
 ```
 $ sudo apt-get install libevent-dev python3-dev
 ```
-- Install if not installed already (needed for bcrypt):
+- Install if not installed already :
 ```
-$ sudo apt-get install build-essential libssl-dev libffi-dev python-dev libtiff5-dev libjpeg8-dev
+$ sudo apt-get install build-essential libssl-dev libffi-dev python-dev libtiff5-dev libjpeg8-dev libffi-dev
 ```   
 - Create your working environment and virtualenv:
 ```
@@ -114,7 +115,7 @@ Any of these options can added, modified, or removed as you like after creating 
 
 ## Prerequisites ##
 
-- Python 2.6 , 2.7 , 3 
+- Python  2.7 or 3.* 
 - pip
 - virtualenv (virtualenvwrapper is recommended for use during development)
 
