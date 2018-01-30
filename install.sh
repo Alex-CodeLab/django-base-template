@@ -1,11 +1,7 @@
 #!/bin/bash
-echo "Install Django "
+echo "Install Django " 
 version=$(python -V 2>&1 | grep -Po '(?<=Python )(.)')
-if [ "$version" -lt 3 ]; then
-pip install 'django>=1.11,<2.0'
-else
-pip install 'django>=2.0'
-fi
+if [ "$version" -lt 3 ]; then pip install 'django>=1.11,<2.0' ; else pip install 'django>=2.0'; fi
 
 
 echo "Startproject"
