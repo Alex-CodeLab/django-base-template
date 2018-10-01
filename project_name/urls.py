@@ -4,7 +4,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from layout.views import profile
 from django.conf import settings
-from django.contrib.auth.views import logout
+from django.contrib.auth import logout
 from django.views.static import serve
 admin.autodiscover()
 
