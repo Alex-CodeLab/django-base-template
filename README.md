@@ -39,7 +39,7 @@ src                   # project root
 ## Quick Install ##
 
 ```
-source <(wget -qO- https://raw.githubusercontent.com/FeedTheWeb/django-base-template/master/install.sh)
+source <(wget -qO- https://raw.githubusercontent.com/Alex-CodeLab/django-base-template/master/install.sh)
 ```
 
 ## Installation ##
@@ -64,7 +64,7 @@ $ source bin/activate
 ```
 - run install.sh :
 ```
-$ source <(wget -qO- https://raw.githubusercontent.com/FeedTheWeb/django-base-template/master/install.sh)
+$ source <(wget -qO- https://raw.githubusercontent.com/Alex-CodeLab/django-base-template/master/install.sh)
 ```
   
 ...and that's all!
