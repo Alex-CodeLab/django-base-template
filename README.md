@@ -8,7 +8,7 @@ This template installs a fully functional Django website in just a few minutes.
 
 Django 1.11 (for python2.7)
 Django 2 (python3)
-includes bootstrap3, Allauth, and some other useful apps. These are esy to remove if you dont need it.
+includes bootstrap3, Allauth, and some other useful apps. These are easy to remove if you dont need it.
 
 The goal of this template is to set up a fully functional django project in minutes, and have a clear project structure.
 
@@ -38,7 +38,7 @@ src                   # project root
 ```
 source <(wget -qO- https://raw.githubusercontent.com/Alex-CodeLab/django-base-template/master/install.sh)
 ```
-(if nothing happens when running this command, you should probably update ssl certs: `sudo update-ca-certificates --fresh && export SSL_CERT_DIR=/etc/ssl/certs` )
+(if nothing happens when running above command, you should probably update ssl certs: `sudo update-ca-certificates --fresh && export SSL_CERT_DIR=/etc/ssl/certs` )
 
 
 ## Step by step Installation ##
