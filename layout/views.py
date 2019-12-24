@@ -1,6 +1,6 @@
 """ Views for the layout application """
 
-from django.shortcuts import render, render_to_response, HttpResponseRedirect
+from django.shortcuts import render, HttpResponseRedirect
 import django
 
 def home(request):
