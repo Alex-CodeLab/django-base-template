@@ -34,6 +34,7 @@ src                   # project root
 
 
 ## Quick Install ##
+first `git clone` this repo. Then,  
 
 ```
 source <(wget -qO- https://raw.githubusercontent.com/Alex-CodeLab/django-base-template/master/install.sh)
