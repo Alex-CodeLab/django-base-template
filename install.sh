@@ -5,7 +5,7 @@ if [ "$version" -lt 3 ]; then pip install 'django>=1.11,<2.0' ; else pip install
 
 
 echo "Startproject"
-bin/django-admin.py startproject --template https://github.com/Alex-CodeLab/django-base-template/zipball/master --extension py,md,rst config && \
+django-admin.py startproject --template https://github.com/Alex-CodeLab/django-base-template/zipball/master --extension py,md,rst config && \
 
 mv config/ src && \
 
