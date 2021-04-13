@@ -1,5 +1,5 @@
 
-# Django2.2+ / Django1.11 complete installer #
+# Django3 / Django2.2+ / Django1.11 complete installer #
 
 ## About ##
 
@@ -7,7 +7,7 @@
 This template installs a fully functional Django website in just a few minutes.
 
 Django 1.11 (for python2.7)
-Django 2 (python3)
+Django 2+ (python3)
 includes bootstrap3, Allauth, and some other useful apps. These are easy to remove if you dont need it.
 
 The goal of this template is to set up a fully functional django project in minutes, and have a clear project structure.
