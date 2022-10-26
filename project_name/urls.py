@@ -15,11 +15,9 @@ def bad(request):
     1 / 0
 
 urlpatterns = [
-    # Examples:
-    # url(r'^$', '{{ project_name }}.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+
     path('admin/', admin.site.urls),
-    path('bad/$, bad),
+    path('bad/', bad),
     path('', include('layout.urls')),
     #all-auth 
     path('accounts/', include('allauth.urls')),
