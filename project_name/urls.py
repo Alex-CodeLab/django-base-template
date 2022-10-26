@@ -1,6 +1,6 @@
 """ Default urlconf for {{ project_name }} """
 
-from django.conf.urls import include, path
+from django.urls import include, path
 from django.conf.urls.static import static
 from django.contrib import admin
 from layout.views import profile
