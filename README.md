@@ -34,7 +34,7 @@ src                   # project root
 
 
 ## Quick Install ##
-first create a virtenv, activate and `git clone` this repo. Then,  
+first create a virtenv, activate. Then,  
 
 ```
 source <(wget -qO- https://raw.githubusercontent.com/Alex-CodeLab/django-base-template/master/install.sh)
