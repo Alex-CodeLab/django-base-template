@@ -1,9 +1,8 @@
 """urlconf for the layout application"""
-
-from django.conf.urls import url
+from django.urls import path
 from layout.views import home
 
 
 urlpatterns =[
-    url(r'^$', home),
+    path('', home),
 ]
