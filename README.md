@@ -1,5 +1,5 @@
 
-# Django3 / Django2.2+ / Django1.11 complete installer #
+# Django4 / Django3 / Django2.2+ / Django1.11 complete installer #
 
 ## About ##
 
@@ -34,7 +34,7 @@ src                   # project root
 
 
 ## Quick Install ##
-first `git clone` this repo. Then,  
+first create a virtenv, activate and `git clone` this repo. Then,  
 
 ```
 source <(wget -qO- https://raw.githubusercontent.com/Alex-CodeLab/django-base-template/master/install.sh)
