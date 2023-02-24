@@ -28,7 +28,7 @@ src                   # project root
     ... 
 ```
 
-[![demo](https://imgur.com/download/Or8idbF)]
+
 
 
 
