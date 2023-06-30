@@ -21,7 +21,7 @@ urlpatterns = [
     path('', include('layout.urls')),
     #all-auth 
     path('accounts/', include('allauth.urls')),
-    path('accounts/profile', profile),    
+    path('accounts/profile/', profile),    
     path('accounts/logout/', logout, {'next_page': '/'}),
 ]
 
